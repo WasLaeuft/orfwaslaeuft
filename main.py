@@ -122,6 +122,7 @@ def reply_to_facebook(recipient_id, message):
     print data
 
     url = "https://graph.facebook.com/v2.6/me/messages?" + urllib.urlencode(params)
+
     r = requests.post(url=url, headers=headers, data=data)
 
 
@@ -137,3 +138,5 @@ def create_generic_template_element(title, image_url, subtitle):
 
 if __name__ == '__main__':
     app.run(debug=True)
+=======
+    r = urlfetch.fetch(url=url, headers=headers, method='POST', payload=data)
